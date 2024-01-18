@@ -9,4 +9,7 @@ const myValue8 = 30
 
 // Do all eight
 
-const total = const myValue1 + const myValue2 + const myValue3 + const myValue4 + const myValue5 + const myValue6 + const myValue7 + const myValue8
+const total =  myValue1 +  myValue2 +  myValue3 +  myValue4 +  myValue5 +  myValue6 +  myValue7 +  myValue8
+
+const myHeading = document.querySelector("h2");
+myHeading.textContent = total;
