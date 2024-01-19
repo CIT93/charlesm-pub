@@ -1,11 +1,11 @@
-const myValue1 = 4
-const myValue2 = 4
-const myValue3 = 6
-const myValue4 = 2
-const myValue5 = 4
-const myValue6 = 25
-const myValue7 = 4
-const myValue8 = 30
+const myValuehouse_members1 = 4
+const myValuehouse_size2 = 4
+const myValuefood_choice3 = 6
+const myValuewater_consume4 = 2
+const myValuenew_item_purchase5 = 4
+const myValuewaste_produce6 = 25
+const myValuerecycle7 = 4
+const myValueyearly_transport8 = 30
 
 // Do all eight
 
