@@ -22,7 +22,22 @@ function dHp(numberInHousehold) {
   
   
   // global scope
-  
-  
+
   dHp(3);
   dHp(4);
+
+
+const houseSize = "small";
+console.log(carbonFootprintPoints);
+  
+  if (houseSize === "small") {
+    carbonFootprintPoints = carbonFootprintPoints + 4;
+  } else if(houseSize === "large") {
+    carbonFootprintPoints = carbonFootprintPoints + 10;
+  } else if (houseSize === "medium") {
+    carbonFootprintPoints = carbonFootprintPoints + 7;
+  } else if (houseSize === "aPt") {
+    carbonFootprintPoints = carbonFootprintPoints + 2;
+  }
+  console.log(`Based on the size of the home of ${houseSize} the points would be ${carbonFootprintPoints}`)
+  
