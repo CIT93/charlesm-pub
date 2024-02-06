@@ -73,6 +73,3 @@ start(3, "medium")
 
 displayOutput ()
 
-// go back to 7:00 and 11:25 on video to help figure out html issue
-// update template string to reference data memebers of house or size of house
-// i think problem starts on line 53
