@@ -47,7 +47,7 @@ function displayOutObj(obj) {
   console.log(obj);
       const output = document.getElementById("output");
       const newH2 = document.createElement("h2");
-      newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+      newH2.textContent = `The total carbon footprint is ${obj.cfpTotal}. The score is determined by the number of household members, ${obj.houseM}, and house size, ${obj.houseS}. The number of household points scored are ${obj.houseMPTS}, and house size points are ${obj.houseSPTS}. `;
       output.appendChild(newH2);
 }
 
@@ -71,7 +71,7 @@ function displayOutput(){
     console.log(obj)
     const output = document.getElementById("output");
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+    newH2.textContent = `Carbon Footprint is ${obj.cfpTotal}`;
     output.appendChild(newH2);
 
   }
@@ -100,7 +100,9 @@ start(5, "small")
 start(4, "large")
 start(3, "medium")
 
-displayOutput()
+displayOutObj(cfpData[0]);
+displayOutObj(cfpData[1]);
+displayOutObj(cfpData[2]);
 
 console.log(cfpData);
 
