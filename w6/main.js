@@ -48,11 +48,11 @@ function displayOutObj() {
   console.log(obj);
       const output = document.getElementById("output");
       const newH2 = document.createElement("h2");
-      newH2.textContent = `The total carbon footprint is ${obj.cfpTotal}. The score is determined by the number of household members, ${obj.houseM}, and house size, ${obj.houseS}. The number of household points scored are ${obj.houseMPTS}, and house size points are ${obj.houseSPTS}. `;
+      newH2.textContent = `${obj.firstn} ${obj.lastn} has a total carbon footprint of ${obj.cfpTotal}. The score is determined by the number of household members, ${obj.houseM}, and house size, ${obj.houseS}. The number of household points scored are ${obj.houseMPTS}, and house size points are ${obj.houseSPTS}. `;
       output.appendChild(newH2);}
 }
 
-  function start(houseHoldmembers, houseSize) {
+  function start(houseHoldmembers, houseSize, firstName, lastName) {
     const householdPTS = dHp(houseHoldmembers);
     const houseSizepoints = dHSp(houseSize);
     const total = householdPTS + houseSizepoints;
@@ -62,6 +62,8 @@ function displayOutObj() {
       houseS: houseSize,
       houseMPTS: householdPTS,
       houseSPTS: houseSizepoints, 
+      firstn: firstName,
+      lastn: lastName,
       cfpTotal: total});
     
     
@@ -86,7 +88,7 @@ FORM.addEventListener(`submit`, function(e){
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(houseMembers, houseSize);
+  start(houseMembers, houseSize, firstName, lastName);
   OUTPUT.innerHTML = "";
   displayOutObj(cfpData);
 
