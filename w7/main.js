@@ -106,10 +106,11 @@ function displayOutput(){
 // Usage
 //renderTable(data, TBL); 
 // Assuming TBL is the container element
+
 // for the coding challenge, i used chatgpt for help in hopes I can see and understand why this way of coding works.I feel I am starting to see but just can't put my finger on it. 
 //actually the more i look at it, i understand it a little more. I feel with more practice and exposure I will get it more. 
 
-
+//comment clarification: I did in fact use a code from chatgpt when I said i used chatgpt for help.  
 FORM.addEventListener(`submit`, function(e){
   e.preventDefault();
   
