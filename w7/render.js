@@ -13,16 +13,29 @@ function renderTblHeading(){
     thead.appendChild(tr);
     table.appendChild(thead);
     return table
+    // i am thinking an else if statement would work here but i am not sure how to apply it. 
   }
   function renderTbl(data){
-     const table = renderTblHeading();
+     
+    
+    const table = renderTblHeading();
       const tbody = document.createElement("tbody");
       const tr = document.createElement("tr");
       const trTextArr = ["Charles", 5, "small", 10];
-     trTextArr.forEach(function(text){
-      const td = document.createElement("td");
-      td.textContent = text;
-      tr.appendChild(td);
+     data.forEach(function(objText){
+      for (const [key, CBFdata] of Object.entries(objText)) {
+       //my attempt to change the reference in the forEach from trTextArr to be the reference to the array of objects
+       
+        if key == "lastn, houseM, houseS"
+        //this is my attempt to loop over the object and write conditional logic. I really do not know what to do from here. 
+         const td = document.createElement("td");
+        td.textContent = CBFdata;
+        tr.appendChild(td);
+        
+      }
+    
+   
+      //console.log(objText);
      })
      const td = document.createElement("td");
      const btnEdit = document.createElement("Button");
@@ -42,3 +55,5 @@ function renderTblHeading(){
      TBL.appendChild(table);
   }
   export{renderTbl,renderTblHeading};
+
+  //no idea how i will need to consider about how and where you update (append or appendChild) 
