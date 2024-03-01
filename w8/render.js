@@ -28,17 +28,17 @@ function renderTblBtn(index, data){
 btnDel.addEventListener(`click`, function(e){
   console.log(`Hello from inside the delete button`);
   console.log(e);
-
+  
   data.splice(index, 1);
-  renderTbl(data);
-  //need help here. i understand the purpose of a splice but do not understand how using one applies here. 
-  // when deleting from the index the numbers in the splice parentheses applies to the location of what numbers are being deleted. But how does it apply here?
+  renderTbl(index, data);
+  // I noticed here when I added the index to the the renderTbl, the whole table along with the data went away after clicking delete but got error messages on other lines. 
+  //
 })
 
-btnEdit.addEventListener(`click`,function(e) {
+btnEdit.addEventListener(`click`, function(e) {
   console.log(`Reuse original data`);
   console.log(e);
-  //add another splice here
+  //i feel like something can be added here so when the edit button is clicked, we can retrieve the initial inputs. I created a console log to display the message reuse data and I am thinking I can add something here to re populate the first name, last name, house member number and size.
 } )
   return td;
 }
