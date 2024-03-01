@@ -56,14 +56,14 @@ const cfpData = [];
   
     cfpData.push({
       firstn: firstName,
+      lastn: lastName,
       houseM: houseHoldmembers,
       houseS: houseSize,
       houseMPTS: householdPTS,
       houseSPTS: houseSizepoints, 
       cfpTotal: total});
-      //lastn: lastName});
     
-    
+      
  }
 
 function displayOutput(){
@@ -124,6 +124,7 @@ FORM.addEventListener(`submit`, function(e){
   OUTPUT.innerHTML = "";
   //displayOutObj(cfpData);
   renderTbl(cfpData);
+  
   FORM.reset();
 })
 

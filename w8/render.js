@@ -1,7 +1,8 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 function renderTblHeading(){
-    TBL.innerHTML = "";
+    //TBL.innerHTML = "";
     const table = document.createElement("Table");
     const thead = document.createElement("Thead");
     const tr = document.createElement("tr");
@@ -16,7 +17,7 @@ function renderTblHeading(){
     return table
   }
 
-function renderTblBtn(index, data){
+function renderTblBtn(obj, index, data){
   const td = document.createElement("td");
   const btnEdit = document.createElement("Button");
   const btnDel = document.createElement("Button");
@@ -30,14 +31,21 @@ btnDel.addEventListener(`click`, function(e){
   console.log(e);
   
   data.splice(index, 1);
-  renderTbl(index, data);
+  renderTbl(data);
   // I noticed here when I added the index to the the renderTbl, the whole table along with the data went away after clicking delete but got error messages on other lines. 
   //
 })
 
 btnEdit.addEventListener(`click`, function(e) {
-  console.log(`Reuse original data`);
-  console.log(e);
+ 
+  FORM[1].value = obj.firstn;
+  FORM[2].value = obj.lastn;
+  FORM[3].value = obj.houseM;
+  FORM[4].value = obj.houseS;
+
+  data.splice(index, 1);
+  renderTbl(data);
+
   //i feel like something can be added here so when the edit button is clicked, we can retrieve the initial inputs. I created a console log to display the message reuse data and I am thinking I can add something here to re populate the first name, last name, house member number and size.
 } )
   return td;
@@ -58,7 +66,7 @@ data.forEach(function(obj, index){
         tr.appendChild(td);
         }
         }
-      const td = renderTblBtn(index, data);
+      const td = renderTblBtn(obj, index, data);
      tr.appendChild(td);
      tbody.appendChild(tr);
      
@@ -72,11 +80,14 @@ data.forEach(function(obj, index){
 
 
   function renderTbl(data){
-     const table = renderTblHeading();
-     const tbody = renderTBLBody(data);
-      
-      //const tr = document.createElement("tr");   
+     TBL.innerHTML = "";
+    
+    if(data.length !== 0){
+      const table = renderTblHeading();
+      const tbody = renderTBLBody(data);  
       table.appendChild(tbody);
       TBL.appendChild(table);
-  }
-  export{renderTbl,renderTblHeading};
+ }
+
+    }
+    export{renderTbl,renderTblHeading};
