@@ -60,8 +60,8 @@ data.forEach(function(obj, index){
       const tr = document.createElement("tr");  
       // const td = document.createElement("td");
       for(const[key, value] of Object.entries(obj)){
-        if(key !== "lastName" && key !== "houseMPTS" && key !== "houseSPTS"){
-        const td = document.createElement("td");
+        if(key !== "lastn" && key !== "houseMPTS" && key !== "houseSPTS"){
+        const td = document.createElement("td"); 
         td.textContent = value;
         tr.appendChild(td);
         }
