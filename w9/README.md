@@ -1,0 +1,9 @@
+I am going to do my best to make this make as much sense as possible. My javascript vocabulary is still a work in progress. Constants are declared and have forms on them. The "FORM" after the equal signs after the constants allows data to be input by the user and be submitted. Example, const firstName = FORM.firstName.value. This references the part where the first name is input by the user. The same applys for the last name, house members and house size. FORM comes from the html and on line 5 on the main.js it is declared. I plan to attend tutoring again this week to help me thouroughly understand and explain this code. 
+
+update after video:
+I like how things are thouroughly explained but I feel the problem lies with me. I am still unfimiliar with a lot of the vocabulary and sometimes become a little unsure what is being told to me. Me seeing what is being done along with verbal explanation helps. Like I mentioned, I will bring this up in tutoring. I go to chatgpt to help me find quick definitions but I need to see them being applied with an explanation for them information to stick. I am sure with time and repetition it will stick more. Hopefully quick though. 
+
+fourth video with commit "eventlistener for edit and my comment for how we handle the edit" :
+i think we using another splice this time to add may be worth a shot.
+
+Local Storage week 9: Basically it allows key-value pairs to be stored on a web browser. For more complex data JSON would needto be used to do so. Data must also be serialized to be stored, meaning changing the format(translation). This is where JSON comes in. From what i undefrstood, JSON is needed because it is a simple translation process that is easy from people to understand and easy for computer to parse and generate. 

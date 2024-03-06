@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 Carbon Footprint</title>
+   <script type="module" src="main.js"></script>
+
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <form id="form">
+      
+      <fieldset>
+         <legend>Input Carbon Footprint</legend>
+         <div>
+            <label for="">First Name:</label>
+            <input type="text" name="firstname" maxlength="20" required />
+            
+         </div>
+         <div>
+            <label for="">Last Name:</label>
+            <input type="text" name="lastname" maxlength="20" required/>
+            
+         </div>
+        
+            <div>
+               <label for="">Count the members of your household</label>
+               <!--<input name="housem" min="1" required/>-->
+
+               <!--<input type="number"name="housem" min="1" max="6" required/>-->
+
+            </div>
+            <div>
+               <label for="">
+                  Consider the size of your home</label>
+               <!-- <input type="text" name="houses" required/> -->
+               <select name="houses">
+                  <option value="">---Please Enter Size of Home---</option>
+                  <option value="aPt">Apartment</option>
+                  <option value="large">Large</option>
+                  <option value="medium">Medium</option>
+                  <option value="small">Small</option>
+                  
+
+               </select>
+            </div>
+            <div>
+               <button type="Submit">Submit</button>
+            </div>
+            
+      </fieldset>
+      
+      </form>
+   <div id="output"></div>
+   <div id="tab-data"></div>
+   </div>
+   <!--<table>
+      <thead>
+         <tr>
+         <th>Name</th>
+         <th>Household</th>
+         <th>Housesize</th>
+         <th>Carbon Footprint</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+      <tbody>
+         <tr>
+            <td>Charles</td>
+            <td>5</td>
+            <td>Small</td>
+            <td>10</td>
+            <td>
+               <button>Edit</button>
+               <button>Del</button>
+            </td>
+         </tr>
+      </tbody>
+   </table>-->
+</body> 
+</html>
+
+
