@@ -1,10 +1,15 @@
 import { renderTbl } from "./render.js";
 import { dHSp, dHp } from "./carbFoot.js";
+import {FORM} from "./global.js";
+import {saveLS, cfpData} from "./storage.js";
 
+const firstNameEl = document.getElementById('firstName');
+const lastNameEl = document.getElementById('firstName');
+const submitEl = document.getElementById("submitError");
 
-const FORM = document.getElementById("form");
-const OUTPUT = document.getElementById("output");
-const cfpData = [];
+// const FORM = document.getElementById("form");
+// const OUTPUT = document.getElementById("output");
+// const cfpData = [];
 
 function start(houseHoldmembers, houseSize, firstName, lastName) {
     const householdPTS = dHp(houseHoldmembers);
@@ -23,25 +28,48 @@ function start(houseHoldmembers, houseSize, firstName, lastName) {
       
  }
 
-FORM.addEventListener(`submit`, function(e){
-  e.preventDefault();
-  if (housem.value && houses.value === 0) {
-    renderTbl.push
+ renderTbl(cfpData);
+
+ // Function to validate a single field
+ function validateField(event){
+  const field = event.target.value;
+  const fieldId = event.target.id;
+  const fieldError = document.getElementById(`${fieldId}Error`);
+
+  if (field === '') {
+      fieldError.textContent = `${fieldId} is required`;
+      event.target.classList.add('invalid');
+  } else {
+      fieldError.textContent = '';
+      event.target.classList.remove('invalid');
   }
+}
+   // Attach blur event listeners
+    firstNameEl.addEventListener('blur', validateField);
+    lastNameEl.addEventListener('blur', validateField);
 
-// After wacthing the video for option 2, I attempted to try an if statement. I even commented the requrired parts for the house member number and house size on the index.html. 
-// I feel i am on the right track on the first half of the if statement but I am having more doubts on the renderTbl.push. did not get working code. 
 
+fter
+
+
+FORM.addEventListener('submit', function(e){
+  e.preventDefault();
+  
   const firstName = FORM.firstname.value;
   const lastName = FORM.lastname.value;
-  const houseMembers = parseInt(FORM.housem.value);
-  const houseSize = FORM.houses.value;
-  start(houseMembers, houseSize, firstName, lastName);
-  OUTPUT.innerHTML = "";
-  //displayOutObj(cfpData);
-  renderTbl(cfpData);
-  
-  FORM.reset();
+  const firstNameIsValid = firstNameEl.value !=='';
+  const lastNameIsValid = lastNameEl.value !=='';
+  if (firstNameIsValid && lastNameIsValid) {
+    submitEl.textContent = '';
+    const houseMembers = parseInt(FORM.housem.value);
+    const houseSize = FORM.houses.value;
+    start(houseMembers, houseSize, firstName, lastName);
+    startLS(cfpData);
+    renderTbl(cfpData);
+    FORM.reset();
+  } else {
+    submitEl.textContent = "Form requires first name and last name";
+  } 
 })
 
 

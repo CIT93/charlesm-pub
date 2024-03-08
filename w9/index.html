@@ -15,26 +15,23 @@
       <fieldset>
          <legend>Input Carbon Footprint</legend>
          <div>
-            <label for="">First Name:</label>
-            <input type="text" name="firstname" maxlength="20" required />
-            
+            <label>First Name:</label>
+            <input type="text" name="firstname"id = firstName maxlength="25"/>
+            <span id="firstNameError" class="error"></span>
          </div>
          <div>
-            <label for="">Last Name:</label>
-            <input type="text" name="lastname" maxlength="20" required/>
-            
+            <label>Last Name:</label>
+            <input type="text" name="lastname" id=lastName maxlength="25"/>
+            <span id="lastNameError" class="error"></span>
          </div>
         
             <div>
                <label for="">Count the members of your household</label>
-               <!--<input name="housem" min="1" required/>-->
+               <input type="number" name="housem" min="1" max="6" required/>
 
-               <!--<input type="number"name="housem" min="1" max="6" required/>-->
-
-            </div>
+               </div>
             <div>
-               <label for="">
-                  Consider the size of your home</label>
+               <label>Consider the size of your home</label>
                <!-- <input type="text" name="houses" required/> -->
                <select name="houses">
                   <option value="">---Please Enter Size of Home---</option>
@@ -46,9 +43,9 @@
 
                </select>
             </div>
-            <div>
-               <button type="Submit">Submit</button>
-            </div>
+            
+               <button type="Submit">Submit</button><br>
+               <span id="SubmitError" class="error"></span>
             
       </fieldset>
       
