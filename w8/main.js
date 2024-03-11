@@ -1,7 +1,7 @@
 import { renderTbl } from "./render.js";
 import { dHSp, dHp } from "./carbFoot.js";
 import {FORM} from "./global.js";
-import {saveLS, cfpData} from "./storage.js";
+import {saveLS, cfpData, getLS} from "./storage.js";
 
 const firstNameEl = document.getElementById('firstName');
 const lastNameEl = document.getElementById('firstName');
@@ -48,8 +48,7 @@ function start(houseHoldmembers, houseSize, firstName, lastName) {
     firstNameEl.addEventListener('blur', validateField);
     lastNameEl.addEventListener('blur', validateField);
 
-
-fter
+    
 
 
 FORM.addEventListener('submit', function(e){
