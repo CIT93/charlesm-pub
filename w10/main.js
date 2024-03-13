@@ -3,7 +3,7 @@ import { dHSp, dHp } from "./carbFoot.js";
 import {FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 
-const start = function (houseHoldmembers, houseSize, firstName, lastName) {
+const start = (houseHoldmembers, houseSize, firstName, lastName) => {
     const householdPTS = dHp(houseHoldmembers);
     const houseSizepoints = dHSp(houseSize);
     const total = householdPTS + houseSizepoints;
@@ -23,7 +23,7 @@ const start = function (houseHoldmembers, houseSize, firstName, lastName) {
  renderTbl(cfpData);
 
  // Function to validate a single field
-  const validateField = function (event) {
+  const validateField = event => {
     const field = event.target.value;
     const fieldId = event.target.id;
     const fieldError = document.getElementById(`${fieldId}Error`);
@@ -45,7 +45,7 @@ const start = function (houseHoldmembers, houseSize, firstName, lastName) {
     
 
 
-FORM.addEventListener('submit', function(e){
+FORM.addEventListener('submit', e => {
   e.preventDefault();
   
   const firstNameIsValid = FNAME.value !=='';
@@ -61,5 +61,28 @@ FORM.addEventListener('submit', function(e){
   } 
 });
 
-// i figured out what i was doing wrong on my code for w9. I was coding along on my w8 folder. all should be good now. 
 
+//rest operator
+// const add2 = function(...a){
+//   return 2 + a[3];
+// }
+
+// const result = add2(1,2,3,4);
+
+
+//arrow function
+
+const add2 = a => 2 + a;
+
+
+const result = add2(100);
+
+//IIFE
+
+
+const a = 3;
+
+(function(a) {
+  console.log("inside IIFE");
+  console.log(a);
+})(a);

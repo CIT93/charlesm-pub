@@ -1,4 +1,4 @@
- const dHSp = function (houseSize) {
+ const dHSp = (houseSize) => {
     let houseSizepoints = 0;
     
     if (houseSize === "small") {
@@ -16,7 +16,7 @@
   
   }
   
-   const dHp = function (numberInHousehold) {
+   const dHp = (numberInHousehold) => {
       let householdPoints = 0;
     if (numberInHousehold === 1) {
       householdPoints = 14;
