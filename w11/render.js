@@ -41,10 +41,10 @@ btnDel.addEventListener(`click`, e => {
 })
 btnEdit.addEventListener(`click`, e => {
  
-  FORM[1].value = obj.firstn;
-  FORM[2].value = obj.lastn;
-  FORM[3].value = obj.houseM;
-  FORM[4].value = obj.houseS;
+  FORM.firstName.value = obj.first;
+  FORM.lastName.value = obj.last;
+  FORM.housem.value = obj.houseMembers;
+  FORM.houses.value = obj.houseSize;
 
   onUpdate(index, data);
 })
@@ -60,7 +60,7 @@ data.forEach((obj, index) => {
       const tr = document.createElement("tr");  
       // const td = document.createElement("td");
       for(const[key, value] of Object.entries(obj)){
-        if(key !== "lastn" && key !== "houseMPTS" && key !== "houseSPTS"){
+        if(key !== "last" && key !== "householdPoints" && key !== "houseSizepoints"){
         const td = document.createElement("td"); 
         td.textContent = value;
         tr.appendChild(td);
@@ -91,3 +91,5 @@ data.forEach((obj, index) => {
  }}
 
  export { renderTbl} //renderTblHeading };
+
+ // I am completly lost on this one. As much as I would like to try, I really don't know where to begin.

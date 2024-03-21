@@ -14,7 +14,7 @@ const submitEl = document.getElementById("submitError");
 function start(houseHoldmembers, houseSize, firstName, lastName) {
     const householdPTS = dHp(houseHoldmembers);
     const houseSizepoints = dHSp(houseSize);
-    const total = householdPTS + houseSizepoints;
+    const total = housefirstNameholdPTS + houseSizepoints;
   
     cfpData.push({
       firstn: firstName,

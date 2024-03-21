@@ -3,22 +3,51 @@ import { dHSp, dHp } from "./carbFoot.js";
 import {FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 
-const start = (houseHoldmembers, houseSize, firstName, lastName) => {
-    const householdPTS = dHp(houseHoldmembers);
-    const houseSizepoints = dHSp(houseSize);
-    const total = householdPTS + houseSizepoints;
+// const start = (houseHoldmembers, houseSize, firstName, lastName) => {
+//     const householdPTS = dHp();
+//     const houseSizepoints = dHSp();
+//     const total = householdPTS + houseSizepoints;
   
-    cfpData.push({
-      firstn: firstName,
-      lastn: lastName,
-      houseM: houseHoldmembers,
-      houseS: houseSize,
-      houseMPTS: householdPTS,
-      houseSPTS: houseSizepoints, 
-      cfpTotal: total});
+//     cfpData.push({
+//       firstn: firstName,
+//       lastn: lastName,
+//       houseM: houseHoldmembers,
+//       houseS: houseSize,
+//       houseMPTS: householdPTS,
+//       houseSPTS: houseSizepoints, 
+//       cfpTotal: total});
     
       
- }
+//  }
+
+const start = (...i) => {
+  const first = i[2];
+  const last = i[3];
+  const houseHoldmembers = i[0];
+  const houseSize = i[1];
+  
+  
+  const householdPTS = dHp(houseHoldmembers);
+  const houseSizepoints = dHSp(houseSize);
+  const total = householdPTS + houseSizepoints;
+
+  cfpData.push({
+    firstn: first,
+    lastn: last,
+    houseM: houseHoldmembers,
+    houseS: houseSize,
+    houseMPTS: householdPTS,
+    houseSPTS: houseSizepoints, 
+    cfpTotal: total});
+  
+    
+}
+
+
+
+
+
+
 
  renderTbl(cfpData);
 
@@ -48,11 +77,11 @@ const start = (houseHoldmembers, houseSize, firstName, lastName) => {
 FORM.addEventListener('submit', e => {
   e.preventDefault();
   
-  const firstNameIsValid = FNAME.value !=='';
-  const lastNameIsValid = LNAME.value !=='';
+  // const firstNameIsValid = FNAME.value !=='';
+  // const lastNameIsValid = LNAME.value !=='';
   if (FNAME.value !=='' && LNAME.value !=='') {
   SUBMIT.textContent = '';
-    start(parseInt(FORM.housem.value), FORM.houses.value, FNAME.value, LNAME.value);
+    start(parseInt(FORM.housem.value,), FORM.houses.value, FNAME.value, LNAME.value);
     saveLS(cfpData);
     renderTbl(cfpData);
     FORM.reset();
@@ -72,17 +101,17 @@ FORM.addEventListener('submit', e => {
 
 //arrow function
 
-const add2 = a => 2 + a;
+// const add2 = a => 2 + a;
 
 
-const result = add2(100);
+// const result = add2(100);
 
 //IIFE
 
 
-const a = 3;
+// const a = 3;
 
-(function(a) {
-  console.log("inside IIFE");
-  console.log(a);
-})(a);
+// (function(a) {
+//   console.log("inside IIFE");
+//   console.log(a);
+// })(a);
