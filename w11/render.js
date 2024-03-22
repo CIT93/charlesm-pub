@@ -7,7 +7,7 @@ const renderTblHeading = (data) => {
     const table = document.createElement("Table");
     const thead = document.createElement("Thead");
     const tr = document.createElement("tr");
-    const headingTextArr =["Name","HouseHold","HouseSize","Footprint","Actions"];
+    const headingTextArr =["Name","HouseHold","HouseSize","Diet Choice","Footprint","Actions"];
     headingTextArr.forEach((text) => {
       const th = document.createElement("th");
       th.textContent = text;
@@ -45,6 +45,7 @@ btnEdit.addEventListener(`click`, e => {
   FORM.lastName.value = obj.last;
   FORM.housem.value = obj.houseMembers;
   FORM.houses.value = obj.houseSize;
+  FORM.dietChoice.value = obj.dietChoice;
 
   onUpdate(index, data);
 })
@@ -60,7 +61,7 @@ data.forEach((obj, index) => {
       const tr = document.createElement("tr");  
       // const td = document.createElement("td");
       for(const[key, value] of Object.entries(obj)){
-        if(key !== "last" && key !== "householdPoints" && key !== "houseSizepoints"){
+        if(key !== "last" && key !== "householdPoints" && key !== "houseSizepoints" && key !== "dietPoints"){
         const td = document.createElement("td"); 
         td.textContent = value;
         tr.appendChild(td);

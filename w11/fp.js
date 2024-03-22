@@ -1,13 +1,13 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, dietPoints){
+    constructor(first, last, houseMembers, houseSize, dietChoice){
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
         this.houseSize = houseSize;
-        this.dietPoints = dietPoints;
+        this.dietChoice = dietChoice;
         this.householdPoints();
         this.houseSizepoints();
-        this.diet();
+        this.dietChoicePoints();
         this.total();
     }
     householdPoints(){
@@ -55,35 +55,48 @@ class FP {
 
 
 }
-diet (){
-  if(this.dietPoints === "domMeatDaily"){
-    this.diet = 10;
+dietChoicePoints (){
+  if(this.dietChoice === "domMeatDaily"){
+    this.dietPoints = 10;
   }
-  else if(this.dietPoints === "meatFewtimes"){
-    this.diet = 8;
+  else if(this.dietChoice === "meatFewtimes"){
+    this.dietPoints = 8;
   } 
-  else if (this.dietPoints === "vegetarian"){
-    this.diet = 4;
+  else if (this.dietChoice === "vegetarian"){
+    this.dietPoints = 4;
   }
-  else if(this.dietPoints === "vegWildmeat"){
-    this.diet = 2;
+  else if(this.dietChoice === "vegWildmeat"){
+    this.dietPoints= 2;
   }
-  else if (this.dietPoints === "unhealthy"){
-    this.diet = 12;
+  else if (this.dietChoice === "unhealthy"){
+    this.dietPoints = 12;
   }
-  else if (this.dietPoints === "partialHealthy"){
-    this.diet = 6;
+  else if (this.dietChoice === "partialHealthy"){
+    this.dietPoints = 6;
   }
-  else if (this.dietPoints === "Natural"){
-    this.diet = 2;
+  else if (this.dietChoice === "Natural"){
+    this.dietPoints = 2;
   }
-}
+
+  
+      
+    }
+    
 
 
-total(){
-  this.total = this.householdPoints + this.houseSizepoints;
-}
-};
+
+
+
+
+
+
+
+
+
+
+total() {
+  this.total = this.householdPoints + this.houseSizepoints + this.dietPoints;
+}}
 export {FP};
 
 // I am not sure on what to do. I replayed the part of the video tht described the challenge
