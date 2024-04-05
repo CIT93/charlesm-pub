@@ -85,7 +85,7 @@ data.forEach((obj, index) => {
     
     if(data.length !== 0){
       //console.log("Clear table")
-      const table = renderTblHeading(data);
+      const table = renderTblHeading();
       const tbody = renderTBLBody(data);  
       table.appendChild(tbody);
       TBL.appendChild(table);
