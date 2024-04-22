@@ -18,7 +18,7 @@ const OUT = document.getElementById('output');
 
 async function start(){
     try {
-        const data = await fetch('https://jsonplaceholder.typicode.com/fhfh')
+        const data = await fetch('https://jsonplaceholder.typicode.com/users')
         const result = await data.json()
         onSuccess(result)
         
