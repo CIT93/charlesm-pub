@@ -1,10 +1,27 @@
 import {FORM, TBL} from "./global.js"
 import {cfpData, getLS, saveLS} from "./storage.js";
 
+const calculateAvg = (data) => {
+  const reduceTotal = data.reduce((sum, ea) => sum + ea.total, 0);
+  const tableRef = document.getElementById("table-id");
+  let newRow = tableRef.insertRow(-1);
+  let newCell = newRow.insertCell(0);
+  let newCell_1 = newRow.insertCell(0);
+  let newCell_2 = newRow.insertCell(0);
+  let newCell_3 = newRow.insertCell(0);
+  let newCell_4 = newRow.insertCell(0);
+  let newLabl = document.createTextNode(`Average Footprint`);
+  let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`);
+  newCell_1.appendChild(newLabl);
+  newCell.appendChild(newText);
+
+}
+
 
 const renderTblHeading = (data) => {
     //TBL.innerHTML = "";
     const table = document.createElement("Table");
+    table. setAttribute("id", "table-id")
     const thead = document.createElement("Thead");
     const tr = document.createElement("tr");
     const headingTextArr =["Name","HouseHold","HouseSize","Diet Choice","Footprint","Actions"];
@@ -87,7 +104,7 @@ const renderTBLBody = data => {
       const tbody = renderTBLBody(data);  
       table.appendChild(tbody);
       TBL.appendChild(table);
-      
+      calculateAvg(data);
       
 
  }}
@@ -98,24 +115,7 @@ const renderTBLBody = data => {
 
  export { renderTbl} 
 
- function addRow(TBL) {
-  // Get a reference to the table
-  let tableRef = document.getElementById(TBL);
-
-  // Insert a row at the end of the table
-  let newRow = TBL.insertRow(-1);
-
-  // Insert a cell in the row at index 0
-  let avgCell = newRow.insertCell(0);
-
-  // Append a text node to the cell
-  let avg = document.createTextNode("New bottom row");
-  avgCell.appendChild(avg);
-}
-
-// Call addRow() with the table's ID
-addRow("my-table");
-
+ 
 // function addRow(tableID) {
 //   // Get a reference to the table
 //   let tableRef = document.getElementById(tableID);
