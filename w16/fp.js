@@ -1,5 +1,5 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, dietChoice, foodSource, WaterConsume){
+    constructor(first, last, houseMembers, houseSize, dietChoice, foodSource, WaterConsume, HousePurch, ifChecked){
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
@@ -7,12 +7,14 @@ class FP {
         this.dietChoice = dietChoice;
         this.foodSource = foodSource;
         this.WaterConsumePoints = WaterConsume;
+        this.HousePurch = HousePurch;
         this.ifChecked = ifChecked;
         this.calhouseholdPoints();
         this.calhouseSizepoints();
         this.caldietChoicePoints();
         this.calfoodSourcePoints();
         // this.calWaterConsumePoints();
+        this.calHousePurchPoints();
         this.caltotal();
         this.doubleCalTotal();
         // do I need to add and this.ifChecked and this.doubleCalTotal?
@@ -89,7 +91,32 @@ caldietChoicePoints (){
   }
 
 
+  // calHousePurchPoints(){  
+  //   if(this.HousePurch > 7){
+  //   this.PurchPoints = 10;
+  // }
+  // else if(this.HousePurch >= 5){
+  //   this.PurchPoints = 8;
+  // } 
+  // else if (this.HousePurch >= 3){
+  //   this.PurchPoints = 6;
+  // }
+  // else if(this.HousePurch < 3){
+  //   this.PurchPoints= 4;
+  // }
+  // else if (this.HousePurch === "almost nothing or secondhand"){
+  //   this.PurchPoints = 2;
+  // }
   
+  // i commented this out because I remembered how we did the water consumption only in the index. I am going to givethis a shot too. 
+  
+  
+  }
+
+
+
+
+  }
 
 
 
@@ -104,9 +131,9 @@ caldietChoicePoints (){
 
 caltotal() {
 
-  this.total = this.householdPoints + this.houseSizepoints + this.dietPoints + this.foodPoints + this.WaterConsumePoints;
+  this.total = this.householdPoints + this.houseSizepoints + this.dietPoints + this.foodPoints + this.WaterConsumePoints + this.PurchPoints;
   }
-}
+
 
 function doubleCalTotal(ifChecked) {
   return ifChecked ? '(caltotal * 2)' : 'caltotal';

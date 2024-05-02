@@ -51,7 +51,7 @@ FORM.addEventListener('submit', e => {
   
   if (FNAME.value !=='' && LNAME.value !=='') {
     SUBMIT.textContent = '';
-    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(e.target.housem.value), e.target.houses.value, e.target.dietChoice.value, e.target.foodSource.value, parseInt(e.target.water.value), e.target.appliance.checked);
+    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(e.target.housem.value), e.target.houses.value, e.target.dietChoice.value, e.target.foodSource.value, parseInt(e.target.water.value), e.target.appliance.checked, e.target.);
     cfpData.push(fpObj);
     saveLS(cfpData);
     renderTbl(cfpData);
