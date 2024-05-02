@@ -7,12 +7,15 @@ class FP {
         this.dietChoice = dietChoice;
         this.foodSource = foodSource;
         this.WaterConsumePoints = WaterConsume;
+        this.ifChecked = ifChecked;
         this.calhouseholdPoints();
         this.calhouseSizepoints();
         this.caldietChoicePoints();
         this.calfoodSourcePoints();
         // this.calWaterConsumePoints();
         this.caltotal();
+        this.doubleCalTotal();
+        // do I need to add and this.ifChecked and this.doubleCalTotal?
     }
     calhouseholdPoints(){
         if (this.houseMembers === 1) {
@@ -84,28 +87,7 @@ caldietChoicePoints (){
       this.foodPoints = 2;
     }
   }
-// multWaterConsumePoints(){
-//   let numAppliance = 0;
-//   if(numAppliance === 0){
-    
-//   }
-//   //i feel this how i would start off. 
-// }
 
-
-// calWaterConsumePoints(){
-//   if(this.WaterConsume > 9){
-//     this.WaterPoints = 3;
-//   }
-//   else if(this.WaterConsume > 4){
-//     this.WaterPoints === 2;
-//   }
-//   else if(this.WaterConsume > 1){
-//     this.WaterPoints === 1;
-//   }
-
-// i feel right here I would pass in a function that defines the amount of appliances and tell it to double the points if needed.
-//not entirely sure how to do this. 
 
   
 
@@ -125,5 +107,18 @@ caltotal() {
   this.total = this.householdPoints + this.houseSizepoints + this.dietPoints + this.foodPoints + this.WaterConsumePoints;
   }
 }
+
+function doubleCalTotal(ifChecked) {
+  return ifChecked ? '(caltotal * 2)' : 'caltotal';
+}
+
+console.log(doubleCalTotal(true));
+
+doubleCalTotal(true);
+
+// I am a little uncertain about lines 110 to 116. I pasted the ternary operator and named the function and set ifChecked as a parameter. I then called the function and put true as an argument.
+// do I need to call doubleCalTotal and console log it?
+
+
 export {FP};
 

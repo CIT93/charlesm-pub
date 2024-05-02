@@ -65,6 +65,7 @@ btnEdit.addEventListener(`click`, e => {
   FORM.diet.value = obj.dietChoice;
   FORM.foodSource.value = obj.foodSource;
   FORM.water.value = obj.WaterConsumePoints.toString();
+  FORM.appliance.checked = obj.applianceNum;
 
   onUpdate(index, data);
 })
