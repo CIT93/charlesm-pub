@@ -1,23 +1,24 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, dietChoice, foodSource, WaterConsume, HousePurch, ifChecked){
+    constructor(first, last, houseMembers, houseSize, dietChoice, foodSource, waterValue, WaterConsume, both, PurchPoints){
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
         this.houseSize = houseSize;
         this.dietChoice = dietChoice;
         this.foodSource = foodSource;
+        this.waterValue = waterValue
         this.WaterConsumePoints = WaterConsume;
-        this.HousePurch = HousePurch;
-        this.ifChecked = ifChecked;
+        this.both = both;
+        this.housePurch = PurchPoints;
         this.calhouseholdPoints();
         this.calhouseSizepoints();
         this.caldietChoicePoints();
         this.calfoodSourcePoints();
         // this.calWaterConsumePoints();
-        this.calHousePurchPoints();
+      
         this.caltotal();
-        this.doubleCalTotal();
-        // do I need to add and this.ifChecked and this.doubleCalTotal?
+        
+        
     }
     calhouseholdPoints(){
         if (this.houseMembers === 1) {
@@ -109,43 +110,15 @@ caldietChoicePoints (){
   // }
   
   // i commented this out because I remembered how we did the water consumption only in the index. I am going to givethis a shot too. 
+
   
   
-  }
 
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-caltotal() {
+caltotal(){
 
   this.total = this.householdPoints + this.houseSizepoints + this.dietPoints + this.foodPoints + this.WaterConsumePoints + this.PurchPoints;
-  }
 
-
-function doubleCalTotal(ifChecked) {
-  return ifChecked ? '(caltotal * 2)' : 'caltotal';
 }
-
-console.log(doubleCalTotal(true));
-
-doubleCalTotal(true);
-
-// I am a little uncertain about lines 110 to 116. I pasted the ternary operator and named the function and set ifChecked as a parameter. I then called the function and put true as an argument.
-// do I need to call doubleCalTotal and console log it?
-
-
+}
 export {FP};
 

@@ -64,8 +64,8 @@ btnEdit.addEventListener(`click`, e => {
   FORM.houses.value = obj.houseSize;
   FORM.diet.value = obj.dietChoice;
   FORM.foodSource.value = obj.foodSource;
-  FORM.water.value = obj.WaterConsumePoints.toString();
-  FORM.appliance.checked = obj.applianceNum;
+  FORM.water.value = obj.waterValue;
+  FORM.appliance.checked = obj.both;
   FORM.houseHoldPurch.value = obj.housePurch;
 
   onUpdate(index, data);
@@ -112,31 +112,8 @@ const renderTBLBody = data => {
       
 
  }}
-//  function addRow() {
-//   // Get a reference to the table
-//   let tableRef = document.getElementById("tab-data");
-//  }
+
 
  export { renderTbl} 
 
  
-// function addRow(tableID) {
-//   // Get a reference to the table
-//   let tableRef = document.getElementById(tableID);
-
-//   // Insert a row at the end of the table
-//   let newRow = tableRef.insertRow(-1);
-
-//   // Insert a cell in the row at index 0
-//   let newCell = newRow.insertCell(0);
-
-//   // Append a text node to the cell
-//   let newText = document.createTextNode("New bottom row");
-//   newCell.appendChild(newText);
-// }
-
-// // Call addRow() with the table's ID
-// addRow("my-table");
-
-// I pasted lines 101 to 117 from the link provided and also the orignal example underneath but I am not sure what to plug in. Is the tableID TBL? and tableRef? I plugged in TBL as the tableRef and got back errors on dev tools.
-// will check solution video and update.
