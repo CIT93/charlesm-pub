@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 17 Carbon Footprint</title>
+   <script type="module" src="main.js"></script>
+
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <form id="form">
+      
+      <fieldset>
+         <legend>Input Carbon Footprint</legend>
+         <div>
+            <label>First Name:</label>
+            <input type="text" name="firstname"id = firstName maxlength="25"/>
+            <span id="firstNameError" class="error"></span>
+         </div>
+         <div>
+            <label>Last Name:</label>
+            <input type="text" name="lastname" id=lastName maxlength="25"/>
+            <span id="lastNameError" class="error"></span>
+         </div>
+        
+            <div>
+               <label for="">Count the members of your household</label>
+               <input type="number" name="housem" min="1" max="6" required/>
+
+               </div>
+            <div>
+               <label>Consider the size of your home</label>
+               
+               <select name="houses">
+                  <option value="">---Please Enter Size of Home---</option>
+                  <option value="aPt">Apartment</option>
+                  <option value="large">Large</option>
+                  <option value="medium">Medium</option>
+                  <option value="small">Small</option>
+                  
+
+               </select>
+            </div>
+            <div>
+               <label>Food Choices</label>
+
+               <select name="diet" required>
+                  <option value="">---Please Enter Food Choice---</option>
+                  <option value="domMeatDaily">Domestic Meat</option>
+                  <option value="meatFewtimes">Occasional Domestic Meat</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegWildmeat">Vegetarian/Wild Meat</option>
+                  <option value="unhealthy">Convinience Food</option>
+                  <option value="partialHealthy">Convinience/Healthy</option>
+                  <option value="Natural">Natural</option>
+                  
+               </select>
+            </div>
+
+            <div>
+               <label>Evaluate your food sources</label>
+               <select name="foodSource" required>
+                  <option value="">---Sources of Food---</option>
+                  <option value="packed">Prepacked convenience food</option>
+                  <option value="balanced">Good balance of fresh and convenience food</option>
+                  <option value="local">Only eat fresh, locally grown, or hunted food</option>
+               </select>
+            </div>
+            <div>
+               <label>Water Consumption</label>
+                  <select name="water" id="water" required>
+                     <option value="">---How many times do you run your dishwaher or washing machine---</option>
+                     <option value="3">More than 9 times per week</option>
+                     <option value="2">4 to 9 times per week</option>
+                     <option value="1">1 to 3 times per week</option>
+                     <option value="0">Do not have dishwasher</option>
+                  </select>
+            </div>
+            <div>
+               <p>Household Purchases are new pieces of furniture, electronics, or other gadgets per year</p>
+               <label>Household Purchases</label>
+               <select name="houseHoldPurch" id="houseHoldPurch" required>
+                  <option value="">---Number of Purchases---</option>
+                  <option value="10">7+ a year</option>
+                  <option value="8">5 to 7</option>
+                  <option value="6">3 to 5</option>
+                  <option value="4">Less than 3</option>
+                  <option value="2">Almost nothing/Secondhand</option>
+                </select>
+            
+               <br>
+               <label for="appliance">Do you have both a dish washer and washing machine?</label>
+               <input type="checkbox" id="both" name="appliance" checked />
+               
+             </div>
+             <div>
+               <label>Waste Production</label>
+               <select name="WasteProduction" id="WasteProduction">
+                  <option value="">---Number of Trash Cans Filled per Week---</option>
+                  <option value="50">4</option>
+                  <option value="40">3</option>
+                  <option value="30">2</option>
+                  <option value="20">1</option>
+                  <option value="5">Half or less</option>
+                </select>
+             </div>
+             <fieldset>
+               <legend>Identify the amount of waste you produce</legend>
+               <label>
+                  <input class="recycle" type="checkbox" id="glass" name="glass"/>
+                  Glass
+               </label>
+               <label>
+                  <input class="recycle" type="checkbox" id="plastic" name="plastic"/>
+                  Plastic
+               </label>
+               <label>
+                  <input class="recycle" type="checkbox" id="paper" name="paper"/>
+                  Paper
+               </label>
+               <label>
+                  <input class="recycle" type="checkbox" id="aluminum" name="aluminum"/>
+                  Aluminum
+               </label>
+               <label>
+                  <input class="recycle" type="checkbox" id="steel" name="steel"/>
+                  Steel
+               </label>
+               <label>
+                  <input class="recycle" type="checkbox" id="food" name="food"/>
+                  Food
+               </label>
+             </fieldset>
+             <fieldset>
+               <legend>Check Your Transportation Score</legend>
+               <div>
+                  <label>Personal Vehicle Usage</label>
+                  <select name="perVehUse" id="perVehUse">
+                     <option value="">---Miles per year Driven---</option>
+                     <option value="10">10 to 15k</option>
+                     <option value="6">1k to 10k</option>
+                     <option value="4">Less than 1k</option>
+                  </select>
+            </div>
+            <div>
+               <label>Public Transportation Usage</label>
+               <select name="pubTranUse" id="pubTranUse">
+                  <option value="">---Miles per year---</option>
+                  <option value="12">Over 20k</option>
+                  <option value="10">15k to 20k</option>
+                  <option value="6">10k to 15k</option>
+                  <option value="4">1k to 10k</option>
+                  <option value="2">Less than 1k</option>
+               </select>
+            </div>
+            <div>
+               <label>Annual Flights</label>
+               <select name="flights" id="flights">
+                  <option value="">---Flights per year---</option>
+                  <option value="20">Another Continent</option>
+                  <option value="6">Nearby State/Country</option>
+                  <option value="2">Short Distance</option>
+               </select>
+            </div>
+           
+             </fieldset>
+             
+
+            
+            <button type="Submit">Submit</button><br>
+            <span id="submitError" class="error"></span>
+            
+      </fieldset>
+      
+      </form>
+      <!-- <form id="water">
+         <legend>Water Consumption</legend>
+         <div>
+            <label>Water Consumption</label>
+               <select name="water" required>
+                  <option value="">---How many times do you run your dishwaher or washing machine---</option>
+                  <option value="9+">More than 9 times per week</option>
+                  <option value="9>">4 to 9 times per week</option>
+                  <option value="4>">1 to 3 times per week</option>
+                  <option value="0">Do not have dishwasher</option>
+               </select>
+         </div>
+      </form> -->
+         <!-- <div id="output"></div> -->
+         <div id="tab-data"></div>
+   </body> 
+</html>
+
+
